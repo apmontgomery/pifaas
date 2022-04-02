@@ -1,0 +1,10 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://192.168.50.217:8080
+functions:
+  mystars:
+    lang: node16
+    handler: ./mystars
+    image: ghcr.io/${OWNER:-apmontgomery}/mystars:${TAG:-latest}
+
