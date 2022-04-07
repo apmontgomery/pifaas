@@ -56,4 +56,4 @@ jobs:
         run: >
           OWNER="${{ steps.get_repo_owner.outputs.repo_owner }}"
           TAG="${{ github.sha }}"
-          faas-cli deploy --gateway ${{secrets.OPENFAAS_URL}}}
+          faas-cli deploy --gateway ${{secrets.OPENFAAS_URL}}
