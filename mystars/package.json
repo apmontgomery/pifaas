@@ -10,6 +10,6 @@
   "author": "OpenFaaS Ltd",
   "license": "MIT",
   "dependencies": {
-    "rpi-gpio": "^2.1.7"
+    "onoff": "^6.0.3"
   }
 }
