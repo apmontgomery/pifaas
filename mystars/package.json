@@ -8,8 +8,5 @@
   },
   "keywords": [],
   "author": "OpenFaaS Ltd",
-  "license": "MIT",
-  "dependencies": {
-    "onoff": "^6.0.3"
-  }
+  "license": "MIT"
 }
