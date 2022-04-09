@@ -1,13 +1,14 @@
 'use strict'
-const gpio = require('onoff').Gpio
+const fs = require('fs')
 
 module.exports = async (event, context) => {
 
+  const sy = fs.readdirSync('/sys')
   const result = {
     'body': JSON.stringify(event.body),
     'content-type': event.headers["content-type"],
     'other': 'morerer',
-    gpiovalue: gpio.accessible
+    sy
   }
 
   return context
