@@ -36,9 +36,7 @@ COPY index.js ./
 # entry allows caching of npm install
 
 WORKDIR /home/app/function
-COPY function/*.json ./
-
-RUN npm i onoff
+COPY --chown=app:app function/*.json ./
 
 RUN npm i
 
