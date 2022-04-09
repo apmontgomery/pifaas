@@ -3,7 +3,7 @@ const fs = require('fs')
 
 module.exports = async (event, context) => {
 
-  const sy = fs.readdirSync('/sys')
+  const sy = fs.readdirSync('/sys/class/gpio')
   const result = {
     'body': JSON.stringify(event.body),
     'content-type': event.headers["content-type"],
