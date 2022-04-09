@@ -1,5 +1,5 @@
 FROM --platform=${TARGETPLATFORM:-linux/amd64} ghcr.io/openfaas/of-watchdog:0.9.3 as watchdog
-FROM --platform=${TARGETPLATFORM:-linux/amd64} nikolaik/python3.10-nodejs17-alpine as ship
+FROM --platform=${TARGETPLATFORM:-linux/amd64} nikolaik/python-nodejs:latest as ship
 # FROM --platform=${TARGETPLATFORM:-linux/amd64} node:16-alpine as ship
 
 ARG TARGETPLATFORM
