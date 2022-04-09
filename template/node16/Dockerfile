@@ -11,15 +11,15 @@ RUN chmod +x /usr/bin/fwatchdog
 RUN apk --no-cache add curl ca-certificates \
     && addgroup -S app && adduser -S -g app app
 
+RUN apk add --no-cache python3 make g++
+
+# Turn down the verbosity to default level.
 ENV NPM_CONFIG_LOGLEVEL warn
 
 RUN chmod 777 /tmp
 
 USER app
 
-RUN apk add --no-cache python3 make g++
-
-# Turn down the verbosity to default level.
 RUN mkdir -p /home/app/function
 
 # Wrapper/boot-strapper
@@ -37,6 +37,8 @@ COPY index.js ./
 
 WORKDIR /home/app/function
 COPY function/*.json ./
+
+RUN npm i onoff
 
 RUN npm i
 
