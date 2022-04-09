@@ -1,6 +1,6 @@
 FROM --platform=${TARGETPLATFORM:-linux/amd64} ghcr.io/openfaas/of-watchdog:0.9.3 as watchdog
-FROM --platform=${TARGETPLATFORM:-linux/amd64} nikolaik/python-nodejs:latest as ship
-# FROM --platform=${TARGETPLATFORM:-linux/amd64} node:16-alpine as ship
+# FROM --platform=${TARGETPLATFORM:-linux/amd64} nikolaik/python-nodejs:latest as ship
+FROM --platform=${TARGETPLATFORM:-linux/amd64} node:16-alpine as ship
 
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
@@ -10,6 +10,8 @@ RUN chmod +x /usr/bin/fwatchdog
 
 RUN apk --no-cache add curl ca-certificates \
     && addgroup -S app && adduser -S -g app app
+
+RUN apk add --no-cache python3 py3-pip
 
 # Turn down the verbosity to default level.
 ENV NPM_CONFIG_LOGLEVEL warn
