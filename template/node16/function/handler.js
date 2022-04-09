@@ -1,13 +1,9 @@
 'use strict'
-const gpio = require('onoff').Gpio
 
 module.exports = async (event, context) => {
-
   const result = {
     'body': JSON.stringify(event.body),
-    'content-type': event.headers["content-type"],
-    'other': 'morerer',
-    gpiovalue: gpio.accessible
+    'content-type': event.headers["content-type"]
   }
 
   return context
