@@ -11,7 +11,7 @@ RUN chmod +x /usr/bin/fwatchdog
 RUN apk --no-cache add curl ca-certificates \
     && addgroup -S app && adduser -S -g app app
 
-RUN apk add --no-cache python3 make g++ pigpio
+# RUN apk add --no-cache python3 make g++ pigpio
 
 # Turn down the verbosity to default level.
 ENV NPM_CONFIG_LOGLEVEL warn
