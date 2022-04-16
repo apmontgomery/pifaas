@@ -5,12 +5,17 @@ const userInfo = os.userInfo()
 
 module.exports = async (event, context) => {
 
-  // const sy = fs.readdirSync('/sys/class/gpio')
+  let sy
+  try {
+    sy = fs.readdirSync('/sys/class/gpio')
+  } catch (error) {
+      sy = error
+  }
   const result = {
     'body': JSON.stringify(event.body),
     'content-type': event.headers["content-type"],
     'other': 'morerer',
-    // sy,
+    sy,
     userInfo
   }
 
