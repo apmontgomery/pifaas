@@ -1,6 +1,6 @@
 'use strict'
 const fs = require('fs')
-const os = require('os)
+const os = require('os')
 const userInfo = os.userInfo()
 
 module.exports = async (event, context) => {
