@@ -11,12 +11,16 @@ module.exports = async (event, context) => {
   } catch (error) {
       sy = error
   }
+  const cwd = process.cwd()
+  const dirname = __dirname 
   const result = {
     'body': JSON.stringify(event.body),
     'content-type': event.headers["content-type"],
     'other': 'morerer',
     sy,
-    userInfo
+    userInfo,
+    cwd,
+    dirname
   }
 
   return context
